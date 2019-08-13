@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <el-container>
+        <el-aside width="200px">
+            <el-menu router
+                     unique-opened>
+                <el-submenu index="/css3">
+                    <template slot="title">css3 动画</template>
+                    <el-menu-item index="/css3/road">道路行驶动画</el-menu-item>
+                    <el-menu-item index="/css3/car-road">汽车和道路行驶动画</el-menu-item>
+                </el-submenu>
+            </el-menu>
+        </el-aside>
+
+        <el-container>
+            <el-main>
+                <keep-alive>
+                    <router-view/>
+                </keep-alive>
+            </el-main>
+        </el-container>
+    </el-container>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: 'app',
+  };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
